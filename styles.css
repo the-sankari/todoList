@@ -25,6 +25,7 @@ body{
     position: absolute;
     top: -50px;
     left: -20px;
+    z-index: 999;
 }
 .container{
     background-color: rgb(13, 42, 87);
