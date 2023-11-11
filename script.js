@@ -15,7 +15,26 @@ rendarTodoList();
 function rendarTodoList() {
     let todoListHTML = '';
 
-    for (let i = 0; i < todoList.length; i++) {
+
+    todoList.forEach(function (todoObject, index) {
+         const { name, dueDate } = todoObject; // distructering
+      
+      const html = `<div class ="todoList">
+      <div class = "js-name-input">${name}</div>
+      <div class = "js-date-input">${dueDate}</div>
+       <div >
+       <button class = "delete-btn" onclick = "
+       todoList.splice(${index}, 1);
+       rendarTodoList();
+       " 
+       >Delete</button>
+       </div>
+      </div>
+      `;
+        todoListHTML += html;
+    })
+
+    /*for (let i = 0; i < todoList.length; i++) {
         const todoObject = todoList[i];
         // const name = todoObject.name;
         // const dueDate = todoObject.dueDate;
@@ -35,8 +54,7 @@ function rendarTodoList() {
       </div>
       `;
         todoListHTML += html;
-    }
-
+    }*/
     // console.log(todoListHTML)
 
     const list = document.querySelector('.todoList');
